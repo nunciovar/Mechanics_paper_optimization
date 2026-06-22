@@ -1,4 +1,4 @@
-﻿---
+---
 name: terminology-guard
 description: Enforce consistent technical terminology, acronym introduction, and naming conventions across manuscript drafts. Use when Codex needs to audit or lightly correct term drift in LaTeX or Markdown papers, especially before section rewrites, final polishing, or rebuttal preparation.
 ---

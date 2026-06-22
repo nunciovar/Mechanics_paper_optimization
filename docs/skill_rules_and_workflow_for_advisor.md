@@ -1,4 +1,4 @@
-﻿# Current Paper-Optimization Skills: Rules And Workflow
+# Current Paper-Optimization Skills: Rules And Workflow
 
 This document summarizes the current manuscript-optimization skill system in this repository for advisor review. It consolidates the governing rules, skill responsibilities, decision logic, deterministic checks, and the full execution workflow currently used for paper editing support.
 

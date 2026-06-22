@@ -1,4 +1,4 @@
-﻿---
+---
 name: redundancy-reduce
 description: Compress repetitive wording and self-overlap within or across paper sections while preserving each section's rhetorical job. Use when a manuscript repeats the same explanation, sentence frame, or claim across abstract, introduction, results, discussion, or conclusion and needs a scoped, author-safe reduction pass.
 ---

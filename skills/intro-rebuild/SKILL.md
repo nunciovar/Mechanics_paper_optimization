@@ -1,4 +1,4 @@
-﻿---
+---
 name: intro-rebuild
 description: Rebuild an introduction around background, gap, objective, method overview, and contribution placement. Use when a paper introduction in LaTeX or Markdown has the right raw content but weak flow, blurred section roles, or unclear motivation, and Codex should rewrite only the introduction rather than the full manuscript.
 ---

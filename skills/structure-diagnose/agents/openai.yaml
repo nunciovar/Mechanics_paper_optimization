@@ -1,4 +1,4 @@
-﻿interface:
+interface:
   display_name: "Structure Diagnose"
   short_description: "Diagnose section structure and logic before rewriting under the shared contract."
   default_prompt: "Load the shared paper-optimization contract first, then audit the manuscript section for structural problems, logic gaps, repetition hotspots, claim-evidence risks, and must-keep scientific content without rewriting the text."

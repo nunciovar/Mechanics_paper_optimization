@@ -1,4 +1,4 @@
-﻿---
+---
 name: anti-template-rewrite
 description: Rewrite a passage to reduce template-like academic phrasing, empty transitions, and generic significance language while preserving technical meaning and discipline-appropriate tone. Use when a paper section sounds mechanically polished, overly symmetric, or overconfident, but the scientific content itself should remain intact.
 ---

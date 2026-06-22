@@ -1,4 +1,4 @@
-﻿interface:
+interface:
   display_name: "Abstract Optimize"
   short_description: "Diagnose and rewrite an abstract under the repository's full paper-editing contract."
   default_prompt: "Load the shared paper-optimization contract first, diagnose the manuscript abstract, then optimize it for clearer structure, tighter logic, higher information density, and less template-like phrasing while preserving scientific meaning and evidential scope."
