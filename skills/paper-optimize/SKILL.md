@@ -1,4 +1,4 @@
-﻿---
+---
 name: paper-optimize
 description: Orchestrate any paper-optimization request under the repository's full manuscript-editing constitution. Use when the user asks to optimize, revise, polish, diagnose, de-template, compress, or align any manuscript passage in LaTeX or Markdown and the task may require choosing or sequencing multiple paper-editing phases.
 ---

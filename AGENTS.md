@@ -1,4 +1,4 @@
-﻿# Paper Editing Constitution
+# Paper Editing Constitution
 
 ## Mission
 

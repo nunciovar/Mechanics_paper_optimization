@@ -1,4 +1,4 @@
-﻿interface:
+interface:
   display_name: "Intro Rebuild"
   short_description: "Rebuild introductions around gap, objective, and contribution under the shared contract."
   default_prompt: "Load the shared paper-optimization contract first, diagnose the current introduction logic, then restructure it around background, gap, objective, method overview, and contribution placement without editing unrelated sections."

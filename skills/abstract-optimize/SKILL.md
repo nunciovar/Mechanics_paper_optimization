@@ -1,4 +1,4 @@
-﻿---
+---
 name: abstract-optimize
 description: Optimize a paper abstract for high-level academic journals while preserving scientific meaning, numerical fidelity, terminology consistency, and scope control. Use when Codex needs to diagnose, rewrite, or quality-check an abstract in LaTeX or Markdown for clearer structure, tighter logic, higher information density, and less template-like phrasing without adding unsupported claims.
 ---

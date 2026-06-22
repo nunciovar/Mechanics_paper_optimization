@@ -1,4 +1,4 @@
-﻿---
+---
 name: structure-diagnose
 description: Diagnose a manuscript section before rewriting. Use when Codex needs to audit section structure, logic continuity, repetition hotspots, terminology drift, or template-like phrasing in LaTeX or Markdown paper drafts, and the correct action is analysis rather than direct rewriting.
 ---

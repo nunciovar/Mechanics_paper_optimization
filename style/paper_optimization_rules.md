@@ -1,4 +1,4 @@
-﻿# Paper Optimization Rules
+# Paper Optimization Rules
 
 This file consolidates the active manuscript-revision rules used in this repository.
 Use it as the quickest reference before diagnosing, rewriting, or polishing any paper section.

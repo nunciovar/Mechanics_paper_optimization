@@ -1,4 +1,4 @@
-﻿interface:
+interface:
   display_name: "Paper Optimize"
   short_description: "Route any manuscript optimization request through the repository's full paper-editing contract."
   default_prompt: "Optimize the requested manuscript scope only after loading the repository's governing paper-editing rules, choosing the correct phase, and applying all non-conflicting scientific, terminology, notation, structure, and advisor-preference constraints."

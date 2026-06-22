@@ -1,4 +1,4 @@
-﻿# Acceptance Checklist
+# Acceptance Checklist
 
 - Scientific meaning preserved
 - Section role preserved
