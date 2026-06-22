@@ -1,0 +1,33 @@
+﻿preferred:
+  CNT: CNT|CNTs|carbon nanotube|carbon nanotubes
+  CNTRPs: CNTRP|CNTRPs|carbon nanotube-reinforced polymer|carbon nanotube-reinforced polymers|carbon nanotube-reinforced polymers (CNTRPs)|carbon nanotube-reinforced polymer (CNTRP)
+  PD: PD|peridynamics
+  carbon nanotube (CNT)-reinforced polymer composite: carbon nanotube (CNT)-reinforced polymer composite|carbon nanotube (CNT)-reinforced polymer composites|carbon nanotube-reinforced polymer composite|carbon nanotube-reinforced polymer composites|carbon nanotube-reinforced epoxy composite|carbon nanotube-reinforced epoxy composites
+  epoxy matrix: epoxy matrix|epoxy matrices
+  reinforcement architecture: reinforcement architecture|reinforcement architectures|carbon nanotube architecture|carbon nanotube architectures|fiber architecture|fiber architectures
+  ordinary state-based peridynamics: ordinary state-based peridynamics|OSB-PD
+  bond-based peridynamics: bond-based peridynamics|BB-PD
+  non-ordinary state-based peridynamics: non-ordinary state-based peridynamics|NOSB-PD
+  representative volume element: representative volume element|representative volume elements|RVE|RVEs
+  interfacial debonding: interfacial debonding|interface debonding
+  quasi-static loading: quasi-static loading|quasi static loading
+  Heterogeneous-bond scheme: Heterogeneous-bond scheme|heterogeneous-bond scheme
+  intra-matrix bonds: intra-matrix bonds|intra-matrix bond|MM bonds|MM bond
+  intra-CNT bonds: intra-CNT bonds|intra-CNT bond|CC bonds|CC bond
+  interfacial bonds: interfacial bonds|interfacial bond|MC bonds|MC bond
+  trans-phase bonds: trans-phase bonds|trans-phase bond|CMC bonds|CMC bond|MCM bonds|MCM bond
+
+acronym_first_use:
+  - CNT
+  - CNTRPs
+  - PD
+  - OSB-PD
+  - BB-PD
+  - NOSB-PD
+  - RVE
+  - MM
+  - CC
+  - MC
+  - CMC
+  - MCM
+

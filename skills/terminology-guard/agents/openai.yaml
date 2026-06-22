@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Terminology Guard"
+  short_description: "Keep technical terms, abbreviations, notation, and naming consistent."
+  default_prompt: "Load the shared paper-optimization contract first, then check the manuscript for terminology drift, abbreviation misuse, notation collisions, and inconsistent naming, and propose narrowly scoped fixes that preserve technical intent."

@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Redundancy Reduce"
+  short_description: "Compress self-repetition across sections without losing claims or section roles."
+  default_prompt: "Load the shared paper-optimization contract first, then compress repetitive phrasing and duplicated content in the manuscript while preserving distinctions between abstract, introduction, results, discussion, and conclusion."

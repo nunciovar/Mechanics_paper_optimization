@@ -1,0 +1,29 @@
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.vs/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# LaTeX build products
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+
+# Large/private manuscript packages
+*.zip
+*.7z
+*.rar
+*.pdf
+*.pptx
+*.docx
+

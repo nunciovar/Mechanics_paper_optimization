@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Anti Template Rewrite"
+  short_description: "Reduce template-like academic phrasing under the shared paper-editing contract."
+  default_prompt: "Load the shared paper-optimization contract first, then rewrite the provided passage to reduce template-like phrasing, empty claims, and repetitive transitions while preserving scientific meaning, notation integrity, and discipline tone."
