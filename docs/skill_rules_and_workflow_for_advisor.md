@@ -43,7 +43,8 @@ The skills are intended for local, controlled revision of LaTeX manuscript conte
 
 ### Main manuscript source
 
-- `first Article_latex/els-cas-templates/cas-dc-sample.tex`
+The manuscript source should be read from `PROJECT_CONFIG.yml` when present.
+This repository should not assume one fixed paper path.
 
 ## 3. Governing Philosophy
 

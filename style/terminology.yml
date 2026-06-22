@@ -1,21 +1,134 @@
-﻿preferred:
-  CNT: CNT|CNTs|carbon nanotube|carbon nanotubes
-  CNTRPs: CNTRP|CNTRPs|carbon nanotube-reinforced polymer|carbon nanotube-reinforced polymers|carbon nanotube-reinforced polymers (CNTRPs)|carbon nanotube-reinforced polymer (CNTRP)
-  PD: PD|peridynamics
-  carbon nanotube (CNT)-reinforced polymer composite: carbon nanotube (CNT)-reinforced polymer composite|carbon nanotube (CNT)-reinforced polymer composites|carbon nanotube-reinforced polymer composite|carbon nanotube-reinforced polymer composites|carbon nanotube-reinforced epoxy composite|carbon nanotube-reinforced epoxy composites
-  epoxy matrix: epoxy matrix|epoxy matrices
-  reinforcement architecture: reinforcement architecture|reinforcement architectures|carbon nanotube architecture|carbon nanotube architectures|fiber architecture|fiber architectures
-  ordinary state-based peridynamics: ordinary state-based peridynamics|OSB-PD
-  bond-based peridynamics: bond-based peridynamics|BB-PD
-  non-ordinary state-based peridynamics: non-ordinary state-based peridynamics|NOSB-PD
-  representative volume element: representative volume element|representative volume elements|RVE|RVEs
-  interfacial debonding: interfacial debonding|interface debonding
-  quasi-static loading: quasi-static loading|quasi static loading
-  Heterogeneous-bond scheme: Heterogeneous-bond scheme|heterogeneous-bond scheme
-  intra-matrix bonds: intra-matrix bonds|intra-matrix bond|MM bonds|MM bond
-  intra-CNT bonds: intra-CNT bonds|intra-CNT bond|CC bonds|CC bond
-  interfacial bonds: interfacial bonds|interfacial bond|MC bonds|MC bond
-  trans-phase bonds: trans-phase bonds|trans-phase bond|CMC bonds|CMC bond|MCM bonds|MCM bond
+# Project terminology guard.
+#
+# This file intentionally uses a small, predictable YAML subset so the
+# repository scripts can parse it without external dependencies.
+
+preferred_terms:
+  CNT:
+    canonical: CNT
+    variants:
+      - CNT
+      - CNTs
+      - carbon nanotube
+      - carbon nanotubes
+
+  CNTRPs:
+    canonical: CNTRPs
+    variants:
+      - CNTRP
+      - CNTRPs
+      - carbon nanotube-reinforced polymer
+      - carbon nanotube-reinforced polymers
+
+  PD:
+    canonical: PD
+    variants:
+      - PD
+      - peridynamics
+
+  carbon nanotube-reinforced polymer composite:
+    canonical: carbon nanotube-reinforced polymer composite
+    variants:
+      - carbon nanotube (CNT)-reinforced polymer composite
+      - carbon nanotube (CNT)-reinforced polymer composites
+      - carbon nanotube-reinforced polymer composite
+      - carbon nanotube-reinforced polymer composites
+      - carbon nanotube-reinforced epoxy composite
+      - carbon nanotube-reinforced epoxy composites
+
+  epoxy matrix:
+    canonical: epoxy matrix
+    variants:
+      - epoxy matrix
+      - epoxy matrices
+
+  reinforcement architecture:
+    canonical: reinforcement architecture
+    variants:
+      - reinforcement architecture
+      - reinforcement architectures
+      - carbon nanotube architecture
+      - carbon nanotube architectures
+      - fiber architecture
+      - fiber architectures
+
+  ordinary state-based peridynamics:
+    canonical: ordinary state-based peridynamics
+    variants:
+      - ordinary state-based peridynamics
+      - OSB-PD
+
+  bond-based peridynamics:
+    canonical: bond-based peridynamics
+    variants:
+      - bond-based peridynamics
+      - BB-PD
+
+  non-ordinary state-based peridynamics:
+    canonical: non-ordinary state-based peridynamics
+    variants:
+      - non-ordinary state-based peridynamics
+      - NOSB-PD
+
+  representative volume element:
+    canonical: representative volume element
+    variants:
+      - representative volume element
+      - representative volume elements
+      - RVE
+      - RVEs
+
+  interfacial debonding:
+    canonical: interfacial debonding
+    variants:
+      - interfacial debonding
+      - interface debonding
+
+  quasi-static loading:
+    canonical: quasi-static loading
+    variants:
+      - quasi-static loading
+      - quasi static loading
+
+  heterogeneous-bond scheme:
+    canonical: heterogeneous-bond scheme
+    variants:
+      - Heterogeneous-bond scheme
+      - heterogeneous-bond scheme
+
+  intra-matrix bonds:
+    canonical: intra-matrix bonds
+    variants:
+      - intra-matrix bonds
+      - intra-matrix bond
+      - MM bonds
+      - MM bond
+
+  intra-CNT bonds:
+    canonical: intra-CNT bonds
+    variants:
+      - intra-CNT bonds
+      - intra-CNT bond
+      - CC bonds
+      - CC bond
+
+  interfacial bonds:
+    canonical: interfacial bonds
+    variants:
+      - interfacial bonds
+      - interfacial bond
+      - MC bonds
+      - MC bond
+
+  trans-phase bonds:
+    canonical: trans-phase bonds
+    variants:
+      - trans-phase bonds
+      - trans-phase bond
+      - CMC bonds
+      - CMC bond
+      - MCM bonds
+      - MCM bond
 
 acronym_first_use:
   - CNT
@@ -30,4 +143,3 @@ acronym_first_use:
   - MC
   - CMC
   - MCM
-

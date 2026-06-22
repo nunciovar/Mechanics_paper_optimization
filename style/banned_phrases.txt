@@ -1,4 +1,7 @@
-﻿it is worth noting that
+# One phrase per line.
+# These are warning triggers, not automatic rewrite commands.
+
+it is worth noting that
 it should be noted that
 deserves special attention
 has important significance

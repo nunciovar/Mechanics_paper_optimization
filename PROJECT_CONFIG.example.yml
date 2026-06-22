@@ -1,0 +1,22 @@
+# Copy this file to PROJECT_CONFIG.yml and edit it for each paper project.
+
+project:
+  name: example_mechanics_paper
+  domain: mechanics
+
+paths:
+  manuscript: path/to/main_manuscript.tex
+  figures: path/to/figures
+  bibliography: path/to/references.bib
+  review_output: review
+
+checks:
+  terminology: style/terminology.yml
+  banned_phrases: style/banned_phrases.txt
+  long_sentence_threshold: 35
+  repetition_min_count: 3
+
+workflow:
+  default_scope: one_section
+  require_diagnosis_before_rewrite: true
+  require_verification_summary: true
