@@ -7,11 +7,16 @@ Preserve scientific meaning, numerical claims, cited evidence, and section roles
 
 ## Project Map
 
-- Main manuscript source: `first Article_latex/els-cas-templates/cas-dc-sample.tex`
+- Project configuration: `PROJECT_CONFIG.yml` when present.
+- Example configuration: `PROJECT_CONFIG.example.yml`.
 - Project-local skills: `skills/`
 - Deterministic checks: `scripts/`
 - Style controls: `style/`
 - Review outputs: `review/`
+
+Do not assume a fixed manuscript path. For a new paper, read
+`PROJECT_CONFIG.yml` first. If it does not exist, ask the user for the manuscript
+path and review scope before editing.
 
 ## Source Of Truth
 
@@ -97,9 +102,10 @@ For diagnosis tasks, return results in this order:
 - Use `scripts/` for repeatable checks.
 - Read `style/` before terminology or tone edits.
 - Write diagnostics and acceptance artifacts into `review/` when creating persistent outputs.
+- Use `review/templates/` for persistent review summaries.
 
 ## Current Assumptions
 
-- This project currently centers on a LaTeX manuscript rather than chapter-wise Markdown files.
-- The existing paper discusses CNT/epoxy composites and peridynamics-related terminology; preserve these domain choices unless the manuscript itself indicates otherwise.
+- A target project may be a LaTeX manuscript, Markdown manuscript, or section-level text export.
+- Domain terminology may differ by paper; update `style/terminology.yml` project by project.
 - Project-local skills are starter versions and should be iterated after real usage.

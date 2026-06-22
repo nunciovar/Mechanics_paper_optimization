@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 from __future__ import annotations
 
 import argparse
@@ -6,63 +6,115 @@ import re
 from pathlib import Path
 
 
-LINE_RE = re.compile(r"^(?P<indent>\s*)(?P<body>.*)$")
+LATEX_COMMAND_RE = re.compile(r"\\[A-Za-z@]+(?:\[[^\]]*\])?(?:\{[^{}]*\})?")
 
 
 def parse_terminology(path: Path) -> tuple[dict[str, list[str]], list[str]]:
+    """Parse the repository's small terminology.yml subset.
+
+    The parser intentionally supports only the structure used in style/terminology.yml:
+
+    preferred_terms:
+      term:
+        canonical: ...
+        variants:
+          - ...
+    acronym_first_use:
+      - CNT
+    """
     preferred: dict[str, list[str]] = {}
-    acronym_first_use: list[str] = []
-    section = None
+    acronyms: list[str] = []
+    section: str | None = None
+    current_term: str | None = None
+    in_variants = False
 
     for raw_line in path.read_text(encoding="utf-8").splitlines():
         line = raw_line.rstrip()
-        if not line or line.lstrip().startswith("#"):
-            continue
-        match = LINE_RE.match(line)
-        assert match
-        indent = len(match.group("indent"))
-        body = match.group("body")
-
-        if indent == 0 and body.endswith(":"):
-            section = body[:-1]
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
             continue
 
-        if section == "preferred" and indent >= 2 and ":" in body:
-            canonical, variants = body.split(":", 1)
-            preferred[canonical.strip()] = [item.strip() for item in variants.split("|") if item.strip()]
-        elif section == "acronym_first_use" and indent >= 2 and body.strip().startswith("-"):
-            acronym_first_use.append(body.split("-", 1)[1].strip())
+        indent = len(line) - len(line.lstrip(" "))
 
-    return preferred, acronym_first_use
+        if indent == 0 and stripped.endswith(":"):
+            section = stripped[:-1]
+            current_term = None
+            in_variants = False
+            continue
+
+        if section == "preferred_terms":
+            if indent == 2 and stripped.endswith(":"):
+                current_term = stripped[:-1]
+                preferred.setdefault(current_term, [])
+                in_variants = False
+                continue
+            if current_term and indent == 4 and stripped.startswith("canonical:"):
+                canonical = stripped.split(":", 1)[1].strip()
+                if canonical and canonical not in preferred[current_term]:
+                    preferred[current_term].insert(0, canonical)
+                continue
+            if current_term and indent == 4 and stripped == "variants:":
+                in_variants = True
+                continue
+            if current_term and in_variants and indent >= 6 and stripped.startswith("-"):
+                variant = stripped.split("-", 1)[1].strip()
+                if variant and variant not in preferred[current_term]:
+                    preferred[current_term].append(variant)
+                continue
+
+        if section == "acronym_first_use" and indent >= 2 and stripped.startswith("-"):
+            acronym = stripped.split("-", 1)[1].strip()
+            if acronym:
+                acronyms.append(acronym)
+
+    return preferred, acronyms
 
 
 def load_list(path: Path) -> list[str]:
-    return [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip() and not line.startswith("#")]
+    return [
+        line.strip()
+        for line in path.read_text(encoding="utf-8").splitlines()
+        if line.strip() and not line.lstrip().startswith("#")
+    ]
 
 
 def strip_tex(text: str) -> str:
     text = re.sub(r"(?<!\\)%.*", "", text)
-    text = re.sub(r"\\[A-Za-z@]+(?:\[[^\]]*\])?(?:\{[^{}]*\})?", " ", text)
+    text = LATEX_COMMAND_RE.sub(" ", text)
     text = text.replace("{", " ").replace("}", " ")
     return re.sub(r"\s+", " ", text)
 
 
+def contains_phrase(text: str, phrase: str) -> bool:
+    pattern = re.compile(rf"(?<![A-Za-z0-9_-]){re.escape(phrase)}(?![A-Za-z0-9_-])", re.IGNORECASE)
+    return bool(pattern.search(text))
+
+
+def count_phrase(text: str, phrase: str) -> int:
+    pattern = re.compile(rf"(?<![A-Za-z0-9_-]){re.escape(phrase)}(?![A-Za-z0-9_-])", re.IGNORECASE)
+    return len(pattern.findall(text))
+
+
+def first_phrase_index(text: str, phrase: str) -> int:
+    pattern = re.compile(rf"(?<![A-Za-z0-9_-]){re.escape(phrase)}(?![A-Za-z0-9_-])", re.IGNORECASE)
+    match = pattern.search(text)
+    return -1 if match is None else match.start()
+
+
 def report_variant_usage(path: Path, text: str, preferred: dict[str, list[str]]) -> bool:
-    lowered = text.lower()
     findings = False
     for canonical, variants in preferred.items():
-        used = [variant for variant in variants if variant.lower() in lowered]
-        if len(used) > 1:
+        used = [variant for variant in variants if contains_phrase(text, variant)]
+        if len(set(item.lower() for item in used)) > 1:
             findings = True
             print(f"{path} :: mixed variants for '{canonical}' -> {', '.join(used)}")
     return findings
 
 
 def report_banned_phrases(path: Path, text: str, banned_phrases: list[str]) -> bool:
-    lowered = text.lower()
     findings = False
     for phrase in banned_phrases:
-        count = lowered.count(phrase.lower())
+        count = count_phrase(text, phrase)
         if count:
             findings = True
             print(f"{path} :: banned phrase '{phrase}' found {count} time(s)")
@@ -73,22 +125,22 @@ def report_acronym_first_use(path: Path, text: str, acronyms: list[str], preferr
     findings = False
     lowered = text.lower()
     for acronym in acronyms:
-        canonical_variants = preferred.get(acronym, [])
-        long_forms = [v for v in canonical_variants if v.upper() != acronym.upper()]
-        acronym_index = lowered.find(acronym.lower())
+        variants = preferred.get(acronym, [])
+        long_forms = [variant for variant in variants if acronym.lower() not in variant.lower()]
+        acronym_index = first_phrase_index(lowered, acronym.lower())
         if acronym_index == -1 or not long_forms:
             continue
         earlier = lowered[:acronym_index]
-        if not any(form.lower() in earlier for form in long_forms):
+        if not any(contains_phrase(earlier, form) for form in long_forms):
             findings = True
             print(f"{path} :: acronym '{acronym}' appears before any listed long form")
     return findings
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Check terminology drift and phrase bans.")
+    parser = argparse.ArgumentParser(description="Check terminology drift and banned phrases.")
     parser.add_argument("paths", nargs="+", help="Files to scan")
-    parser.add_argument("--terminology", default="style/terminology.yml", help="Terminology file")
+    parser.add_argument("--terminology", default="style/terminology.yml", help="Terminology YAML file")
     parser.add_argument("--banned", default="style/banned_phrases.txt", help="Banned phrase file")
     args = parser.parse_args()
 

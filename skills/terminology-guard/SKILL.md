@@ -24,7 +24,7 @@ This skill inherits the mandatory execution contract in `../../skills/paper-opti
    When a variant might reflect a true technical distinction, flag it instead of normalizing it automatically.
 6. Return the fixes plus any unresolved ambiguity.
 7. Compile after edits when feasible.
-   After applying terminology edits to the manuscript source, compile `../../first Article_latex/els-cas-templates/cas-dc-sample.tex` unless the user explicitly says not to.
+   After applying terminology edits to the manuscript source, compile the manuscript path defined in `../../PROJECT_CONFIG.yml` when available, unless the user explicitly says not to.
 
 ## What To Check
 

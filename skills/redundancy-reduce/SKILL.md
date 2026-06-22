@@ -26,7 +26,7 @@ This skill inherits the mandatory execution contract in `../../skills/paper-opti
    Remove or shorten the redundant passage with minimal change to surrounding logic.
 7. Return the revised text plus what was intentionally kept.
 8. Compile after edits when feasible.
-   After applying redundancy reductions to the manuscript source, compile `../../first Article_latex/els-cas-templates/cas-dc-sample.tex` unless the user explicitly says not to.
+   After applying redundancy reductions to the manuscript source, compile the manuscript path defined in `../../PROJECT_CONFIG.yml` when available, unless the user explicitly says not to.
 
 ## Keep vs Remove
 
