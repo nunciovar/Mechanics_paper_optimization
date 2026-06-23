@@ -5,6 +5,8 @@ This repository is a lightweight harness for manuscript-editing loops.
 中文说明：这个仓库提供的是论文编辑闭环的 harness，用来约束“检查、修改、
 验证、记录”的过程。
 
+All workflow files should stay as ordinary multi-line UTF-8 text files.
+
 ## Before Editing
 
 1. Read `AGENTS.md`.

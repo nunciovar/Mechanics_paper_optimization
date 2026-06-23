@@ -1,3 +1,6 @@
+---
+# Router manifest for paper-optimize.
+# Keep this as readable multi-line YAML.
 axes:
   task_phase:
     values:

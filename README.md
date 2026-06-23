@@ -87,3 +87,9 @@ python scripts/detect_long_sentences.py README.md AGENTS.md --threshold 35
 
 These checks are not a substitute for scientific review. They are a harness:
 they make repeated editing passes easier to verify.
+
+## File Format
+
+Repository text files should remain UTF-8 without BOM and use normal LF line
+breaks so GitHub raw views, Markdown rendering, YAML parsing, and Python syntax
+checks all see the same multi-line files.

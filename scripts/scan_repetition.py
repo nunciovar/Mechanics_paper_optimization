@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Scan manuscript text for repeated openers and repeated n-grams."""
+
 from __future__ import annotations
 
 import argparse

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Report sentences that exceed a configurable word-count threshold."""
+
 from __future__ import annotations
 
 import argparse
