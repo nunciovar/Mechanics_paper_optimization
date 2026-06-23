@@ -3,6 +3,9 @@
 This repository contains a controlled manuscript-revision workflow for mechanics,
 peridynamics, and composite-material papers.
 
+中文说明：本仓库用于构建一个受约束的论文优化工作流，重点服务于力学、
+近场动力学和复合材料论文，而不是通用写作工具。
+
 It is designed to help Codex or another editing agent diagnose, restructure,
 polish, de-template, compress, and terminology-check manuscript sections without
 changing scientific meaning or inventing unsupported claims.
@@ -60,6 +63,9 @@ diagnose
 For project-specific manuscript paths, copy `PROJECT_CONFIG.example.yml` to
 `PROJECT_CONFIG.yml` and edit the paths. Do not hard-code one paper's directory
 into reusable workflow files.
+
+中文提示：每个新论文项目都应复制一份 `PROJECT_CONFIG.yml`，不要把某一篇
+论文的路径写死在通用规则或 skill 中。
 
 ## Deterministic Checks
 

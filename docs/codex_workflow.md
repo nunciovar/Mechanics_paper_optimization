@@ -2,6 +2,9 @@
 
 This repository is a lightweight harness for manuscript-editing loops.
 
+中文说明：这个仓库提供的是论文编辑闭环的 harness，用来约束“检查、修改、
+验证、记录”的过程。
+
 ## Before Editing
 
 1. Read `AGENTS.md`.
@@ -9,6 +12,8 @@ This repository is a lightweight harness for manuscript-editing loops.
 3. Confirm the requested scope: full manuscript, one section, paragraph group, or review only.
 4. Read the relevant style controls in `style/`.
 5. Diagnose before rewriting unless the user explicitly asks for direct editing.
+
+中文提示：默认先诊断再改写；只有用户明确要求直接改写时才跳过诊断阶段。
 
 ## Editing Loop
 

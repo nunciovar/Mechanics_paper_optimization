@@ -33,7 +33,9 @@ def sentence_records(text: str) -> list[tuple[int, int, str]]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Report sentences that exceed a word threshold.")
+    parser = argparse.ArgumentParser(
+        description="Report sentences that exceed a word threshold."
+    )
     parser.add_argument("paths", nargs="+", help="Text or .tex files to scan")
     parser.add_argument("--threshold", type=int, default=35, help="Maximum preferred word count")
     args = parser.parse_args()

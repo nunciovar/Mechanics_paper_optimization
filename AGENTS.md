@@ -5,6 +5,8 @@
 Use Codex in this repository as a disciplined paper editor, not as an autonomous paper author.
 Preserve scientific meaning, numerical claims, cited evidence, and section roles before optimizing style.
 
+中文说明：Codex 在这里是受约束的论文编辑助手，不是自动论文作者。任何润色都必须服从科学含义、数据、引用和章节功能。
+
 ## Project Map
 
 - Project configuration: `PROJECT_CONFIG.yml` when present.
