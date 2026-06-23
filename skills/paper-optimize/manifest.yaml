@@ -1,0 +1,32 @@
+axes:
+  task_phase:
+    values:
+      diagnose: static/phase/diagnose.md
+      rebuild: static/phase/rebuild.md
+      polish: static/phase/polish.md
+      reduce_redundancy: static/phase/redundancy.md
+      terminology_check: static/phase/terminology.md
+      acceptance: static/phase/acceptance.md
+
+  section:
+    values:
+      abstract: static/section/abstract.md
+      introduction: static/section/introduction.md
+      methods: static/section/methods.md
+      results: static/section/results.md
+      discussion: static/section/discussion.md
+      conclusion: static/section/conclusion.md
+
+  domain:
+    values:
+      mechanics: static/domain/mechanics.md
+      peridynamics: static/domain/peridynamics.md
+      cnt_ep: static/domain/cnt_ep.md
+      advisor_style: static/domain/advisor_style.md
+      generic: static/domain/generic.md
+
+  language:
+    values:
+      zh_academic: static/language/zh_academic.md
+      zh_to_en: static/language/zh_to_en.md
+      en_polish: static/language/en_polish.md
