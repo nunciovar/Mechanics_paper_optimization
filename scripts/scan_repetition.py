@@ -39,7 +39,12 @@ def ngrams(text: str, size: int) -> collections.Counter[str]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Scan for repeated openers and n-grams.")
     parser.add_argument("paths", nargs="+", help="Files to scan")
-    parser.add_argument("--opener-words", type=int, default=5, help="Words to compare at paragraph starts")
+    parser.add_argument(
+        "--opener-words",
+        type=int,
+        default=5,
+        help="Words to compare at paragraph starts",
+    )
     parser.add_argument("--ngram-size", type=int, default=4, help="N-gram size")
     parser.add_argument("--min-count", type=int, default=3, help="Minimum repeat count to report")
     parser.add_argument("--top", type=int, default=15, help="Maximum rows per report")

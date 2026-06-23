@@ -86,17 +86,26 @@ def strip_tex(text: str) -> str:
 
 
 def contains_phrase(text: str, phrase: str) -> bool:
-    pattern = re.compile(rf"(?<![A-Za-z0-9_-]){re.escape(phrase)}(?![A-Za-z0-9_-])", re.IGNORECASE)
+    pattern = re.compile(
+        rf"(?<![A-Za-z0-9_-]){re.escape(phrase)}(?![A-Za-z0-9_-])",
+        re.IGNORECASE,
+    )
     return bool(pattern.search(text))
 
 
 def count_phrase(text: str, phrase: str) -> int:
-    pattern = re.compile(rf"(?<![A-Za-z0-9_-]){re.escape(phrase)}(?![A-Za-z0-9_-])", re.IGNORECASE)
+    pattern = re.compile(
+        rf"(?<![A-Za-z0-9_-]){re.escape(phrase)}(?![A-Za-z0-9_-])",
+        re.IGNORECASE,
+    )
     return len(pattern.findall(text))
 
 
 def first_phrase_index(text: str, phrase: str) -> int:
-    pattern = re.compile(rf"(?<![A-Za-z0-9_-]){re.escape(phrase)}(?![A-Za-z0-9_-])", re.IGNORECASE)
+    pattern = re.compile(
+        rf"(?<![A-Za-z0-9_-]){re.escape(phrase)}(?![A-Za-z0-9_-])",
+        re.IGNORECASE,
+    )
     match = pattern.search(text)
     return -1 if match is None else match.start()
 
@@ -121,7 +130,12 @@ def report_banned_phrases(path: Path, text: str, banned_phrases: list[str]) -> b
     return findings
 
 
-def report_acronym_first_use(path: Path, text: str, acronyms: list[str], preferred: dict[str, list[str]]) -> bool:
+def report_acronym_first_use(
+    path: Path,
+    text: str,
+    acronyms: list[str],
+    preferred: dict[str, list[str]],
+) -> bool:
     findings = False
     lowered = text.lower()
     for acronym in acronyms:
@@ -140,7 +154,11 @@ def report_acronym_first_use(path: Path, text: str, acronyms: list[str], preferr
 def main() -> int:
     parser = argparse.ArgumentParser(description="Check terminology drift and banned phrases.")
     parser.add_argument("paths", nargs="+", help="Files to scan")
-    parser.add_argument("--terminology", default="style/terminology.yml", help="Terminology YAML file")
+    parser.add_argument(
+        "--terminology",
+        default="style/terminology.yml",
+        help="Terminology YAML file",
+    )
     parser.add_argument("--banned", default="style/banned_phrases.txt", help="Banned phrase file")
     args = parser.parse_args()
 
