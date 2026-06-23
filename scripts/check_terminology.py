@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Check terminology drift, acronym first use, and banned phrases."""
+
 from __future__ import annotations
 
 import argparse
@@ -140,7 +142,11 @@ def report_acronym_first_use(
     lowered = text.lower()
     for acronym in acronyms:
         variants = preferred.get(acronym, [])
-        long_forms = [variant for variant in variants if acronym.lower() not in variant.lower()]
+        long_forms = [
+            variant
+            for variant in variants
+            if acronym.lower() not in variant.lower()
+        ]
         acronym_index = first_phrase_index(lowered, acronym.lower())
         if acronym_index == -1 or not long_forms:
             continue
@@ -152,14 +158,20 @@ def report_acronym_first_use(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Check terminology drift and banned phrases.")
+    parser = argparse.ArgumentParser(
+        description="Check terminology drift and banned phrases."
+    )
     parser.add_argument("paths", nargs="+", help="Files to scan")
     parser.add_argument(
         "--terminology",
         default="style/terminology.yml",
         help="Terminology YAML file",
     )
-    parser.add_argument("--banned", default="style/banned_phrases.txt", help="Banned phrase file")
+    parser.add_argument(
+        "--banned",
+        default="style/banned_phrases.txt",
+        help="Banned phrase file",
+    )
     args = parser.parse_args()
 
     preferred, acronym_first_use = parse_terminology(Path(args.terminology))

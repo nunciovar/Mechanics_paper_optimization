@@ -1,4 +1,5 @@
-# Copy this file to PROJECT_CONFIG.yml and edit it for each paper project.
+# Copy this valid multi-line YAML file to PROJECT_CONFIG.yml and edit it for
+# each paper project.
 # 中文：每个论文项目复制一份 PROJECT_CONFIG.yml，并按项目实际路径修改。
 
 project:
@@ -6,9 +7,9 @@ project:
   domain: mechanics
 
 paths:
-  manuscript: path/to/main_manuscript.tex
-  figures: path/to/figures
-  bibliography: path/to/references.bib
+  manuscript: "path/to/main_manuscript.tex"
+  figures: "path/to/figures"
+  bibliography: "path/to/references.bib"
   review_output: review
 
 checks:

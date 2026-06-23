@@ -3,6 +3,7 @@
 # This file intentionally uses a small, predictable YAML subset so the
 # repository scripts can parse it without external dependencies.
 # 中文：本文件使用简单稳定的 YAML 子集，方便脚本在无外部依赖时解析。
+# Keep this as readable multi-line YAML: preferred_terms -> canonical -> variants.
 
 preferred_terms:
   CNT:
